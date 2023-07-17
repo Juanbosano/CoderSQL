@@ -112,6 +112,13 @@ id_Sexo TINYINT NOT NULL UNIQUE AUTO_INCREMENT
 , Primary Key (id_Sexo)
 );
 
+Create Table Etapa_de_crecimiento (
+id_etapa TINYINT NOT NULL UNIQUE AUTO_INCREMENT
+, Descripcion VARCHAR (120) NOT NULL 
+, Primary Key (id_etapa)
+);
+
+
 Create Table Tracking_Siembra (
 id_siembra INT NOT NULL
 , id_Maceta TINYINT NOT NULL 
@@ -126,6 +133,7 @@ id_siembra INT NOT NULL
 , Inflorecencias TINYINT  NOT NULL Default(true)
 , id_Tricomas TINYINT  NOT NULL 
 , id_Estado TINYINT  NOT NULL 
+, id_etapa tinyint NOT NULL
 , Novedad VARCHAR (255)  
 , Descripcion VARCHAR (255)  
 , FOREIGN KEY (id_siembra, id_Maceta) References Datos_Siembras (id_siembra, id_Maceta) on update cascade 
@@ -133,6 +141,7 @@ id_siembra INT NOT NULL
 , FOREIGN KEY (id_Tricomas) References Tricomas (id_Tricomas)
 , FOREIGN KEY (id_Sexo) References Sexo (id_Sexo)
 , FOREIGN KEY (id_Estado) References Estado (Id_Estado)
+, FOREIGN KEY (id_etapa) References Etapa_de_crecimiento (Id_Etapa)
 );
 
 Create Table Trazabilidad (

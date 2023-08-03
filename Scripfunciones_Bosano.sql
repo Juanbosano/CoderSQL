@@ -17,7 +17,7 @@ BEGIN
         
         RETURN Dias_de_vida;                        
 END;
-CREATE function ultimo_riego (id_consultas int, id_consultam  tinyint) -- Esta funcion calcula los dias de vida
+CREATE function ultimo_riego (id_consultas int, id_consultam  tinyint) -- Esta funcion calcula hace cuantos dias se hizo el ultmimo riego idea que continuara en un storeprocedure
 Returns int 
 READS SQL DATA 
 BEGIN
